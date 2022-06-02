@@ -22,7 +22,5 @@ jobs:
         env: 
             MONGO_URL: ${{ secrets.MONGO_URL }}
         run: |
-          sudo apt update --yes
-          sudo apt install python3-pip --yes
-          python3 -m pip install requests pymongo dnspython beautifulSoup4 ipython nbformat feedparser  python-dateutil
+          pip3 install requests pymongo dnspython beautifulSoup4 ipython nbformat feedparser  python-dateutil
           $HOME/.local/bin/ipython -c "%run scrape_fakti.ipynb"
