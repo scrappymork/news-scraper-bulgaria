@@ -22,4 +22,4 @@ jobs:
             MONGO_URL: ${{ secrets.MONGO_URL }}
         run: |
           pip3 install requests pymongo dnspython beautifulSoup4 ipython nbformat feedparser  python-dateutil
-          $HOME/.local/bin/ipython -c "%run scrape_vesti.ipynb"
+          ipython -c "%run scrape_vesti.ipynb"
