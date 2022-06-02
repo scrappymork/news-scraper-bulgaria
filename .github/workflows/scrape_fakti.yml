@@ -22,5 +22,6 @@ jobs:
         env: 
             MONGO_URL: ${{ secrets.MONGO_URL }}
         run: |
+          echo "$MONGO_URL" > ttt
           pip3 install requests pymongo dnspython beautifulSoup4 ipython nbformat feedparser  python-dateutil
           ipython -c "%run scrape_fakti.ipynb"
