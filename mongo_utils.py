@@ -35,7 +35,7 @@ def translate_collection(mong_col):
                 arr_text.append(tr_sentence)
             except:
                 pass
-          tr_text=' '.join(arr_text)
+          tr_text='.'.join(arr_text)
           arr_text=[]
           col.update_one({"news_link" : nwsln }, {"$set": {"news_text_trans": tr_text}})
           tr_title=translator.translate(news_ttl, src='bg').text
