@@ -1,13 +1,14 @@
 # This is a basic workflow to help you get started with Actions
 
-name: Scrape Vesti
+name: Scrape Dnes.bg
 
 # Controls when the workflow will run
 on:
   workflow_dispatch:
   schedule:
     # * is a special character in YAML so you have to quote this string
-    - cron:  '10 6,9,13,17,20 * * *'
+    - cron:  '33 6,9,13,17,19 * * *'
+
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
@@ -22,4 +23,4 @@ jobs:
             MONGO_URL: ${{ secrets.MONGO_URL }}
         run: |
           pip3 install requests pymongo dnspython beautifulSoup4 ipython nbformat feedparser  python-dateutil
-          ipython -c "%run scrape_vesti.ipynb"
+          ipython -c "%run scrape_dnesbg.ipynb"
